@@ -1,6 +1,7 @@
-import { User } from 'lucide-react'
-import Image from 'next/image'
-import spacetimeLogo from '../assets/spacetime-log.svg'
+import { Copyright } from '@/components/Copyright'
+import { EmptyMemories } from '@/components/EmptyMemories'
+import { Hero } from '@/components/Hero'
+import { Signin } from '@/components/Signin'
 
 export default function Home() {
   return (
@@ -15,38 +16,15 @@ export default function Home() {
         {/* Stripes */}
         <div className="absolute right-2 top-0 bottom-0 w-2 bg-stripes" />
 
-        {/* Sign In */}
-        <a href="#" className="flex items-center gap-3 text-left hover:text-gray-50 transition-colors">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400">
-            <User className='h-5 w-5 text-gray-500' />
-          </div>
-          <p className='text-sm leading-snug max-w-[140px]'><span className='underline'>Crie sua conta</span> e salve suas memórias!</p>
-        </a>
-
-        {/* Hero */}
-        <div className='space-y-5'>
-          <Image src={spacetimeLogo} alt="Space time logo" />
-
-          <div className='max-w-[420px] space-y-4'>
-            <h1 className='text-5xl font-bold leading-tight text-gray-50'>Sua linha do tempo</h1>
-            <p className='text-lg leading-relaxed'>Colecione momentos marcantes da sua jornada e compatilhe (se quiser) com o mundo!</p>
-          </div>
-
-          <a href='' className='uppercase inline-block rounded-full bg-green-500 px-5 py-3 font-alt text-sm leading-none text-black hover:bg-green-600'>Cadastrar lembrança</a>
-        </div>
-
-        {/* Copyright */}
-        <div className='text-sm leading-relaxed text-gray-50'>
-          Feito com ❤️ <a href='https://github.com/JrzenonDev' target='_blank' rel='noopener' className='underline hover:text-gray-200'>JrzenonDev</a>
-        </div>
+        <Signin />
+        <Hero />
+        <Copyright />
 
       </div>
 
       {/* Right */}
       <div className="flex flex-col p-16 bg-[url(../assets/bg-stars.svg)] bg-cover">
-        <div className="flex flex-1 items-center justify-center">
-          <p className="text-center leading-relaxed w-[360px]">Você ainda não registrou nenhuma lembrança, comece a <a href="#" className="underline hover:text-gray-50">criar agora</a>!</p>
-        </div>
+        <EmptyMemories />
       </div>
 
     </main>
