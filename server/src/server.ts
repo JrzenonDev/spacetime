@@ -1,8 +1,13 @@
+import cors from '@fastify/cors'
 import fastify from 'fastify'
 import { memoriesRoutes } from './routes/menories'
 
 const app = fastify()
 
+app.register(cors, {
+  // origin: ['http://localhost: 300'. 'https:seu-provedor']
+  origin: true,
+})
 app.register(memoriesRoutes)
 
 app
